@@ -1,0 +1,29 @@
+{
+  "name": "accname-test",
+  "version": "1.0.0",
+  "description": "collection of test cases for accname",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "tests"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xi/accname-test.git"
+  },
+  "keywords": [
+    "a11y",
+    "accname"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xi/accname-test/issues"
+  },
+  "homepage": "https://github.com/xi/accname-test#readme"
+}
