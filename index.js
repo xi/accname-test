@@ -13,3 +13,21 @@ var files = [
     fs.readFileSync(__dirname + '/tests/spec/example3.html'),
     fs.readFileSync(__dirname + '/tests/spec/step2Fiii-ednote.html'),
 ];
+
+var getTests = function(root) {
+    var elements = root.querySelectorAll('accname-test');
+    return Array.prototype.map.call(elements, function(element) {
+        var test = element.getAttribute('data-test');
+        return {
+            element: root.getElementById(test),
+            name: element.getAttribute('data-name'),
+            description: element.getAttribute('data-description'),
+            comment: element.getAttribute('data-comment'),
+        };
+    });
+};
+
+module.exports = {
+    files: files,
+    getTests: getTests,
+};
