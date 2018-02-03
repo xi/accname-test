@@ -7,6 +7,8 @@ HTML files. Feel free to use these in your tests.
 You can also use [babelacc](https://xi.github.io/babelacc/) to find new test
 cases.
 
+## how to write tests
+
 The test files are HTML snippets. They contain the code that should be tested
 as well as one or more *test cases*. A test case is a `<div>` element with the
 following attributes:
@@ -16,3 +18,8 @@ following attributes:
 -   `data-name`: the expected accessible name (optional)
 -   `data-description`: the expected accessible description (optional)
 -   `data-comment`: can be used to express the intention of this test (optional)
+
+## usage
+
+Sample usage can be seen in
+[aria-api](https://github.com/xi/aria-api/blob/master/test/src/test-name.js).
