@@ -11,7 +11,9 @@
     "build": "browserify -t brfs index.js -o dist/accname-test.js"
   },
   "files": [
-    "tests"
+    "index.js",
+    "tests",
+    "dist"
   ],
   "repository": {
     "type": "git",
