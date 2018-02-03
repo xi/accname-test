@@ -114,7 +114,7 @@
     <option>Russia</option>
   </select>
 
-  <!-- the name from subtree, name from html:input value rather than from its
+  <!-- the name from subtree, name from html__input value rather than from its
     title attribute -->
   <p id="from_input_ignoretitle" aria-labelledby="input_ignoretitle">Country</p>
   <input id="input_ignoretitle"
@@ -207,30 +207,30 @@
   </form>
 
   <!-- controls having a value used as part of computed name -->
-  <input type="checkbox" id="ctrlvalue_progressbar:input">
-  <label for="ctrlvalue_progressbar:input">
+  <input type="checkbox" id="ctrlvalue_progressbar__input">
+  <label for="ctrlvalue_progressbar__input">
     foo <span role="progressbar"
                aria-valuenow="5" aria-valuemin="1"
                aria-valuemax="10">5</span> baz
   </label>
 
-  <input type="checkbox" id="ctrlvalue_scrollbar:input" />
-  <label for="ctrlvalue_scrollbar:input">
+  <input type="checkbox" id="ctrlvalue_scrollbar__input" />
+  <label for="ctrlvalue_scrollbar__input">
     foo <span role="scrollbar"
               aria-valuenow="5" aria-valuemin="1"
               aria-valuemax="10">5</span> baz
   </label>
 
-  <input type="checkbox" id="ctrlvalue_slider:input">
-  <label for="ctrlvalue_slider:input">
+  <input type="checkbox" id="ctrlvalue_slider__input">
+  <label for="ctrlvalue_slider__input">
     foo <input role="slider" type="range"
                value="5" min="1" max="10"
                aria-valuenow="5" aria-valuemin="1"
                aria-valuemax="10"> baz
   </label>
 
-  <input type="checkbox" id="ctrlvalue_spinbutton:input">
-  <label for="ctrlvalue_spinbutton:input">
+  <input type="checkbox" id="ctrlvalue_spinbutton__input">
+  <label for="ctrlvalue_spinbutton__input">
     foo <input role="spinbutton" type="number"
                value="5" min="1" max="10"
                aria-valuenow="5" aria-valuemin="1"
@@ -238,8 +238,8 @@
     baz
   </label>
 
-  <input type="checkbox" id="ctrlvalue_combobox:input">
-  <label for="ctrlvalue_combobox:input">
+  <input type="checkbox" id="ctrlvalue_combobox__input">
+  <label for="ctrlvalue_combobox__input">
     foo
     <div role="combobox">
       <div role="textbox"></div>
@@ -349,7 +349,7 @@
 <div class="accname-test" data-test="btn_labelledby_mixed_br" data-name="text text" data-comment="Gets the name from text nodes. Element br adds space between them."></div>
 <div class="accname-test" data-test="from_label_ignoretitle" data-name="Country:" data-comment="Gets the name from label content which allows name from subtree, ignore @title attribute on label"></div>
 <div class="accname-test" data-test="from_p_ignoretitle" data-name="Choose country from." data-comment="Gets the name from html:p content, which doesn&#x27;t allow name from subtree, ignore @title attribute on label"></div>
-<div class="accname-test" data-test="from_input_ignoretitle" data-name="Custom country" data-comment="Gets the name from html:input value, ignore @title attribute on input"></div>
+<div class="accname-test" data-test="from_input_ignoretitle" data-name="Custom country" data-comment="Gets the name from html__input value, ignore @title attribute on input"></div>
 <div class="accname-test" data-test="insert_spaces_around_control" data-name="start value end" data-comment="Insert spaces around the control&#x27;s value to not jamm sibling text nodes"></div>
 <div class="accname-test" data-test="from_label_ignore_ws_subtree" data-name="about" data-comment="Gets the name from @title, ignore whitespace content"></div>
 <div class="accname-test" data-test="btn_label_inside" data-name="text10text" data-comment="The label element contains the button. The name is calculated from this button. Note: the name contains the content of the button."></div>
@@ -369,11 +369,11 @@
 <div class="accname-test" data-test="btn_title" data-name="title" data-comment="If nothing is left. Let&#x27;s try title attribute."></div>
 <div class="accname-test" data-test="textareawithchild" data-name="Story Foo is ended." data-comment="textarea&#x27;s name should have the value, which initially is specified by a text child."></div>
 <div class="accname-test" data-test="textareawithchild" data-name="Story Bar is ended." data-comment=""></div>
-<div class="accname-test" data-test="ctrlvalue_progressbar:input" data-name="foo 5 baz" data-comment=""></div>
-<div class="accname-test" data-test="ctrlvalue_scrollbar:input" data-name="foo 5 baz" data-comment=""></div>
-<div class="accname-test" data-test="ctrlvalue_slider:input" data-name="foo 5 baz" data-comment=""></div>
-<div class="accname-test" data-test="ctrlvalue_spinbutton:input" data-name="foo 5 baz" data-comment=""></div>
-<div class="accname-test" data-test="ctrlvalue_combobox:input" data-name="foo 5 baz" data-comment=""></div>
+<div class="accname-test" data-test="ctrlvalue_progressbar__input" data-name="foo 5 baz" data-comment=""></div>
+<div class="accname-test" data-test="ctrlvalue_scrollbar__input" data-name="foo 5 baz" data-comment=""></div>
+<div class="accname-test" data-test="ctrlvalue_slider__input" data-name="foo 5 baz" data-comment=""></div>
+<div class="accname-test" data-test="ctrlvalue_spinbutton__input" data-name="foo 5 baz" data-comment=""></div>
+<div class="accname-test" data-test="ctrlvalue_combobox__input" data-name="foo 5 baz" data-comment=""></div>
 <div class="accname-test" data-test="comboinstart" data-name="One day(s)." data-comment=""></div>
 <div class="accname-test" data-test="combo3" data-name="day(s)." data-comment=""></div>
 <div class="accname-test" data-test="textboxinstart" data-name="Two days." data-comment=""></div>
