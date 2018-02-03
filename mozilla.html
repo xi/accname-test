@@ -1,0 +1,399 @@
+<div>
+  <!-- aria-label, simple label -->
+  <span id="btn_simple_aria_label" role="button" aria-label="I am a button"/>
+  <br/>
+  <!-- aria-label plus aria-labelledby -->
+  <span id="btn_both_aria_labels" role="button" aria-label="I am a button, two"
+        aria-labelledby="labelledby_text btn_both_aria_labels"/>
+  <br/>
+
+  <!-- aria-labelledby, single relation -->
+  <span id="labelledby_text">text</span>
+  <button id="btn_labelledby_text"
+          aria-labelledby="labelledby_text">1</button>
+  <br/>
+
+  <!-- aria-labelledby, multiple relations -->
+  <span id="labelledby_text1">text1</span>
+  <span id="labelledby_text2">text2</span>
+  <button id="btn_labelledby_texts"
+          aria-labelledby="labelledby_text1 labelledby_text2">2</button>
+  <br/>
+
+  <!-- name from named accessible -->
+  <input id="labelledby_namedacc" type="checkbox"
+         aria-label="Data" />
+  <input id="input_labelledby_namedacc"
+          aria-labelledby="labelledby_namedacc" />
+
+  <!-- the name from subtree, mixed content -->
+  <span id="labelledby_mixed">no<span>more text</span></span>
+  <button id="btn_labelledby_mixed"
+          aria-labelledby="labelledby_mixed">3</button>
+  <br/>
+
+  <!-- the name from subtree, mixed/hidden content -->
+  <span id="labelledby_mixed_hidden_child">
+    no<span>more 
+      <span style="display: none;">hidden</span>
+      text2
+      <span style="visibility: hidden">hidden2</span>
+    </span>
+  </span>
+  <button id="btn_labelledby_mixed_hidden_child"
+          aria-labelledby="labelledby_mixed_hidden_child">3.1</button>
+  <br/>
+
+  <!-- the name from subtree, mixed/completely hidden content -->
+  <span id="labelledby_mixed_hidden"
+        style="display: none;">lala <span>more hidden </span>text</span></span>
+  <button id="btn_labelledby_mixed_hidden"
+          aria-labelledby="labelledby_mixed_hidden">3.2</button>
+  <br/>
+
+  <!-- the name from subtree, mixed content, block structure -->
+  <div id="labelledby_mixed_block"><div>text</div>more text</div></div>
+  <button id="btn_labelledby_mixed_block"
+          aria-labelledby="labelledby_mixed_block">4</button>
+  <br/>
+
+  <!-- the name from subtree, mixed content, table structure -->
+  <table><tr>
+    <td id="labelledby_mixed_table">text<span>space</span>text</td>
+  </tr></table>
+  <button id="btn_labelledby_mixed_table"
+          aria-labelledby="labelledby_mixed_table">5</button>
+  <br/>
+
+  <!-- the name from subtree, child img -->
+  <span id="labelledby_mixed_img">text<img alt="image"/></span>
+  <button id="btn_labelledby_mixed_img"
+          aria-labelledby="labelledby_mixed_img">6</button>
+  <br/>
+
+  <!-- the name from subtree, child inputs -->
+  <span id="labelledby_mixed_input">
+    <input type="button" id="input_button" title="input button"/>
+    <input type="submit" id="input_submit"/>
+    <input type="reset" id="input_reset"/>
+    <input type="image" id="input_image" title="input image"/>
+  </span>
+  <button id="btn_labelledby_mixed_input"
+          aria-labelledby="labelledby_mixed_input">7</button>
+  <br/>
+
+  <!-- the name from subtree, child object -->
+  <span id="labelledby_mixed_object">
+    <object data="about:blank" title="object"></object>
+  </span>
+  <button id="btn_labelledby_mixed_object"
+          aria-labelledby="labelledby_mixed_object">8</button>
+  <br/>
+
+  <!-- the name from subtree, child br -->
+  <span id="labelledby_mixed_br">text<br/>text</span>
+  <button id="btn_labelledby_mixed_br"
+          aria-labelledby="labelledby_mixed_br">9</button>
+  <br/>
+
+  <!-- the name from subtree, name from label content rather than from its title
+    attribute -->
+  <label  for="from_label_ignoretitle"
+          title="Select your country of origin">Country:</label>
+  <select id="from_label_ignoretitle">
+    <option>Germany</option>
+    <option>Russia</option>
+  </select>
+
+  <!-- the name from subtree, name from html:p content rather than from its
+    title attribute -->
+  <p id="p_ignoretitle"
+     title="Select your country of origin">Choose country from.</p>
+  <select id="from_p_ignoretitle" aria-labelledby="p_ignoretitle">
+    <option>Germany</option>
+    <option>Russia</option>
+  </select>
+
+  <!-- the name from subtree, name from html:input value rather than from its
+    title attribute -->
+  <p id="from_input_ignoretitle" aria-labelledby="input_ignoretitle">Country</p>
+  <input id="input_ignoretitle"
+         value="Custom country"
+         title="Input your country of origin"/ >
+
+  <!-- name from subtree, surround control by spaces to not jamm the text -->
+  <label id="insert_spaces_around_control">
+    start<input value="value">end
+  </label>
+
+  <!-- no name from subtree because it holds whitespaces only -->
+  <a id="from_label_ignore_ws_subtree" href="about:mozilla" title="about">&nbsp;&nbsp;  </a>
+
+  <!-- label element, label contains control -->
+  <label>text<button id="btn_label_inside">10</button>text</label>
+  <br/>
+
+  <!-- label element, label and the button are in the same form -->
+  <form>
+    <label for="btn_label_inform">in form</label>
+    <button id="btn_label_inform">11</button>
+  </form>
+
+  <!-- label element, label is outside of the form of the button -->
+  <label for="btn_label_outform">out form</label>
+  <form>
+    <button id="btn_label_outform">12</button>
+  </form>
+
+  <!-- label element, label and the button are in the same document -->
+  <label for="btn_label_indocument">in document</label>
+  <button id="btn_label_indocument">13</button>
+
+  <!-- multiple label elements for single button -->
+  <label for="btn_label_multi">label1</label>
+  <label for="btn_label_multi">label2</label>
+  <button id="btn_label_multi">button</button>
+
+  <!-- a label containing more than one controls -->
+  <label>
+    Enable <input id="ctrl_in_label_1" type="checkbox"> a
+    <input id="ctrl_in_label_2" type="button" value="button"> control
+  </label>
+
+  <!-- name from children -->
+  <span id="btn_children" role="button">14</span>
+
+  <!-- no name from content, ARIA role overrides this rule -->
+  <button id="btn_nonamefromcontent" role="img">1</button>
+
+  <!-- name from children, hidden children -->
+  <div role="listbox" tabindex="0">
+    <div id="lb_opt1_children_hidden" role="option" tabindex="0">
+      <span>i am visible</span>
+      <span style="display:none">i am hidden</span>
+    </div>
+  </div>
+
+  <table role="menu">
+    <tr role="menuitem" id="tablemenuitem">
+      <td>menuitem 1</td>
+    </tr>
+    <tr role="menuitem">
+      <td>menuitem 2</td>
+    </tr>
+  </table>
+
+  <label id="label_with_acronym">
+    <acronym title="O A T F">OATF</acronym>
+    <abbr title="World Wide Web">WWW</abbr>
+  </label>
+
+  <div id="testArticle" role="article" title="Test article">
+    <p>This is a paragraph inside the article.</p>
+  </div>
+
+  <h1 id="h1" title="oops">heading</h1>
+  <div role="heading" id="aria_heading">aria_heading</div>
+
+  <!-- name from title attribute -->
+  <span id="btn_title" role="group" title="title">15</span>
+
+  <!-- A textarea nested in a label with a text child (bug #453371). -->
+  <form>
+    <label>Story
+      <textarea id="textareawithchild" name="name">Foo</textarea>
+      is ended.
+    </label>
+  </form>
+
+  <!-- controls having a value used as part of computed name -->
+  <input type="checkbox" id="ctrlvalue_progressbar:input">
+  <label for="ctrlvalue_progressbar:input">
+    foo <span role="progressbar"
+               aria-valuenow="5" aria-valuemin="1"
+               aria-valuemax="10">5</span> baz
+  </label>
+
+  <input type="checkbox" id="ctrlvalue_scrollbar:input" />
+  <label for="ctrlvalue_scrollbar:input">
+    foo <span role="scrollbar"
+              aria-valuenow="5" aria-valuemin="1"
+              aria-valuemax="10">5</span> baz
+  </label>
+
+  <input type="checkbox" id="ctrlvalue_slider:input">
+  <label for="ctrlvalue_slider:input">
+    foo <input role="slider" type="range"
+               value="5" min="1" max="10"
+               aria-valuenow="5" aria-valuemin="1"
+               aria-valuemax="10"> baz
+  </label>
+
+  <input type="checkbox" id="ctrlvalue_spinbutton:input">
+  <label for="ctrlvalue_spinbutton:input">
+    foo <input role="spinbutton" type="number"
+               value="5" min="1" max="10"
+               aria-valuenow="5" aria-valuemin="1"
+               aria-valuemax="10">
+    baz
+  </label>
+
+  <input type="checkbox" id="ctrlvalue_combobox:input">
+  <label for="ctrlvalue_combobox:input">
+    foo
+    <div role="combobox">
+      <div role="textbox"></div>
+      <ul role="listbox" style="list-style-type: none;">
+        <li role="option">1</li>
+        <li role="option" aria-selected="true">5</li>
+        <li role="option">3</li>
+      </ul>
+    </div>
+    baz
+  </label>
+
+  <!-- a label with a nested control in the start, middle and end -->
+  <form>
+    <!-- at the start (without and with whitespaces) -->
+    <label id="comboinstart"><select id="combo3">
+        <option>One</option>
+        <option>Two</option>
+      </select>
+      day(s).
+    </label>
+
+    <label id="textboxinstart">
+      <input id="textbox1" value="Two">
+      days.
+    </label>
+
+    <!-- in the middle -->
+    <label id="comboinmiddle">
+      Subscribe to
+      <select id="combo4" name="occupation">
+        <option>ATOM</option>
+        <option>RSS</option>
+      </select>
+      feed.
+    </label>
+
+    <label id="comboinmiddle2" for="checkbox">Play the
+      <select id="combo5">
+        <option>Haliluya</option>
+        <option>Hurra</option>
+      </select>
+      sound when new mail arrives
+    </label>
+    <input id="checkbox" type="checkbox" />
+
+    <label id="comboinmiddle3" for="combo6">Play the
+      <select id="combo6">
+        <option>Haliluya</option>
+        <option>Hurra</option>
+      </select>
+      sound when new mail arrives
+    </label>
+
+    <!-- at the end (without and with whitespaces) -->
+    <label id="comboinend">
+      This day was
+      <select id="combo7" name="occupation">
+        <option>sunny</option>
+        <option>rainy</option>
+      </select></label>
+
+    <label id="textboxinend">
+      This day was
+      <input id="textbox2" value="sunny">
+    </label>
+  </form>
+
+  <!-- placeholder  -->
+  <input id="ph_password" type="password" value="" placeholder="a placeholder" />
+  <input id="ph_text" type="text" placeholder="a placeholder" />
+  <textarea id="ph_textarea" cols="5" placeholder="a placeholder"></textarea>  
+
+  <!-- placeholder does not win -->
+  <input id="ph_text2" type="text" aria-label="a label" placeholder="meh" />
+  <textarea id="ph_textarea2" cols="5" aria-labelledby="ph_text2" 
+            placeholder="meh"></textarea>
+
+  <label for="ph_text3">a label</label>
+  <input id="ph_text3" placeholder="meh" />
+
+  <p>Image: 
+    <img id="img_eq" role="math" src="foo" alt="x^2 + y^2 + z^2">
+    <input type="image"  id="input_img_eq" src="foo" alt="x^2 + y^2 + z^2">
+  </p>
+
+  <p>Text: 
+    <span id="txt_eq" role="math" title="x^2 + y^2 + z^2">x<sup>2</sup> + 
+      y<sup>2</sup> + z<sup>2</sup></span>
+
+  <!-- duplicate announcement -->
+  <div id="test_note" role="note">subtree</div>
+</div>
+
+<div class="accname-test" data-test="btn_simple_aria_label" data-name="I am a button" data-comment="Simple label provided via ARIA"></div>
+<div class="accname-test" data-test="btn_both_aria_labels" data-name="text I am a button, two" data-comment="aria-label and aria-labelledby, expect aria-labelledby"></div>
+<div class="accname-test" data-test="btn_labelledby_text" data-name="text" data-comment="Single relation. The value of &#x27;aria-labelledby&#x27; contains the ID of an element. Gets the name from text node of that element."></div>
+<div class="accname-test" data-test="btn_labelledby_texts" data-name="text1 text2" data-comment="Multiple relations. The value of &#x27;aria-labelledby&#x27; contains the IDs of elements. Gets the name from text nodes of those elements."></div>
+<div class="accname-test" data-test="input_labelledby_namedacc" data-name="Data" data-comment=""></div>
+<div class="accname-test" data-test="btn_labelledby_mixed" data-name="nomore text" data-comment="Gets the name from text nodes contained by nested elements"></div>
+<div class="accname-test" data-test="btn_labelledby_mixed_hidden_child" data-name="nomore text2" data-comment="Gets the name from text nodes contained by nested elements, ignores hidden elements (bug 443081)."></div>
+<div class="accname-test" data-test="btn_labelledby_mixed_hidden" data-name="lala more hidden text" data-comment="Gets the name from hidden text nodes contained by nested elements, (label element is hidden entirely), (bug 443081)."></div>
+<div class="accname-test" data-test="btn_labelledby_mixed_block" data-name="text more text" data-comment="Gets the name from text nodes contained by nested elements having block representation (every text node value in the name should be devided by spaces)"></div>
+<div class="accname-test" data-test="btn_labelledby_mixed_table" data-name="text space text" data-comment="Gets the name from text nodes contained by html:td (every text node value in the name should be devided by spaces). XXX: this case is rather a feature than strong wanted behaviour."></div>
+<div class="accname-test" data-test="btn_labelledby_mixed_img" data-name="text image" data-comment="Gets the name from image accessible."></div>
+<div class="accname-test" data-test="btn_labelledby_mixed_object" data-name="object" data-comment="Gets the name from the title of object element."></div>
+<div class="accname-test" data-test="btn_labelledby_mixed_br" data-name="text text" data-comment="Gets the name from text nodes. Element br adds space between them."></div>
+<div class="accname-test" data-test="from_label_ignoretitle" data-name="Country:" data-comment="Gets the name from label content which allows name from subtree, ignore @title attribute on label"></div>
+<div class="accname-test" data-test="from_p_ignoretitle" data-name="Choose country from." data-comment="Gets the name from html:p content, which doesn&#x27;t allow name from subtree, ignore @title attribute on label"></div>
+<div class="accname-test" data-test="from_input_ignoretitle" data-name="Custom country" data-comment="Gets the name from html:input value, ignore @title attribute on input"></div>
+<div class="accname-test" data-test="insert_spaces_around_control" data-name="start value end" data-comment="Insert spaces around the control&#x27;s value to not jamm sibling text nodes"></div>
+<div class="accname-test" data-test="from_label_ignore_ws_subtree" data-name="about" data-comment="Gets the name from @title, ignore whitespace content"></div>
+<div class="accname-test" data-test="btn_label_inside" data-name="text10text" data-comment="The label element contains the button. The name is calculated from this button. Note: the name contains the content of the button."></div>
+<div class="accname-test" data-test="btn_label_inform" data-name="in form" data-comment="The label element and the button are placed in the same form. Gets the name from the label subtree."></div>
+<div class="accname-test" data-test="btn_label_outform" data-name="out form" data-comment="The label element is placed outside of form where the button is. Take into account the label."></div>
+<div class="accname-test" data-test="btn_label_indocument" data-name="in document" data-comment="The label element and the button are in the same document. Gets the name from the label subtree."></div>
+<div class="accname-test" data-test="btn_label_multi" data-name="label1label2" data-comment="Multiple label elements for single button"></div>
+<div class="accname-test" data-test="ctrl_in_label_1" data-name="Enable a button control" data-comment="Multiple controls inside a label element"></div>
+<div class="accname-test" data-test="ctrl_in_label_2" data-name="button" data-comment="Multiple controls inside a label element"></div>
+<div class="accname-test" data-test="btn_children" data-name="14" data-comment="ARIA role button is presented allowing the name calculation from children."></div>
+<div class="accname-test" data-test="lb_opt1_children_hidden" data-name="i am visible" data-comment="ARIA role option is presented allowing the name calculation from visible children (bug 443081)."></div>
+<div class="accname-test" data-test="tablemenuitem" data-name="menuitem 1" data-comment="Get the name from subtree of menuitem crossing role nothing to get the name from its children."></div>
+<div class="accname-test" data-test="label_with_acronym" data-name="O A T F World Wide Web" data-comment="Get the name from child acronym title attribute rather than from acronym content."></div>
+<div class="accname-test" data-test="testArticle" data-name="Test article" data-comment=""></div>
+<div class="accname-test" data-test="h1" data-name="heading" data-comment=""></div>
+<div class="accname-test" data-test="aria_heading" data-name="aria_heading" data-comment=""></div>
+<div class="accname-test" data-test="btn_title" data-name="title" data-comment="If nothing is left. Let&#x27;s try title attribute."></div>
+<div class="accname-test" data-test="textareawithchild" data-name="Story Foo is ended." data-comment="textarea&#x27;s name should have the value, which initially is specified by a text child."></div>
+<div class="accname-test" data-test="textareawithchild" data-name="Story Bar is ended." data-comment=""></div>
+<div class="accname-test" data-test="ctrlvalue_progressbar:input" data-name="foo 5 baz" data-comment=""></div>
+<div class="accname-test" data-test="ctrlvalue_scrollbar:input" data-name="foo 5 baz" data-comment=""></div>
+<div class="accname-test" data-test="ctrlvalue_slider:input" data-name="foo 5 baz" data-comment=""></div>
+<div class="accname-test" data-test="ctrlvalue_spinbutton:input" data-name="foo 5 baz" data-comment=""></div>
+<div class="accname-test" data-test="ctrlvalue_combobox:input" data-name="foo 5 baz" data-comment=""></div>
+<div class="accname-test" data-test="comboinstart" data-name="One day(s)." data-comment=""></div>
+<div class="accname-test" data-test="combo3" data-name="day(s)." data-comment=""></div>
+<div class="accname-test" data-test="textboxinstart" data-name="Two days." data-comment=""></div>
+<div class="accname-test" data-test="textbox1" data-name="days." data-comment=""></div>
+<div class="accname-test" data-test="comboinmiddle" data-name="Subscribe to ATOM feed." data-comment=""></div>
+<div class="accname-test" data-test="combo4" data-name="Subscribe to ATOM feed." data-comment=""></div>
+<div class="accname-test" data-test="comboinmiddle2" data-name="Play the Haliluya sound when new mail arrives" data-comment=""></div>
+<div class="accname-test" data-test="checkbox" data-name="Play the Haliluya sound when new mail arrives" data-comment=""></div>
+<div class="accname-test" data-test="comboinmiddle3" data-name="Play the Haliluya sound when new mail arrives" data-comment=""></div>
+<div class="accname-test" data-test="combo6" data-name="Play the Haliluya sound when new mail arrives" data-comment=""></div>
+<div class="accname-test" data-test="comboinend" data-name="This day was sunny" data-comment=""></div>
+<div class="accname-test" data-test="combo7" data-name="This day was" data-comment=""></div>
+<div class="accname-test" data-test="textboxinend" data-name="This day was sunny" data-comment=""></div>
+<div class="accname-test" data-test="textbox2" data-name="This day was" data-comment=""></div>
+<div class="accname-test" data-test="ph_password" data-name="a placeholder" data-comment="placeholder"></div>
+<div class="accname-test" data-test="ph_text" data-name="a placeholder" data-comment="placeholder"></div>
+<div class="accname-test" data-test="ph_textarea" data-name="a placeholder" data-comment="placeholder"></div>
+<div class="accname-test" data-test="ph_text2" data-name="a label" data-comment="placeholder"></div>
+<div class="accname-test" data-test="ph_textarea2" data-name="a label" data-comment="placeholder"></div>
+<div class="accname-test" data-test="ph_text3" data-name="a label" data-comment="placeholder"></div>
+<div class="accname-test" data-test="img_eq" data-name="x^2 + y^2 + z^2" data-comment="Test equation image"></div>
+<div class="accname-test" data-test="input_img_eq" data-name="x^2 + y^2 + z^2" data-comment="Test equation image"></div>
+<div class="accname-test" data-test="txt_eq" data-name="x^2 + y^2 + z^2" data-comment="Test equation image"></div>
