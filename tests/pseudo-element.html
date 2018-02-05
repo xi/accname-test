@@ -1,10 +1,13 @@
 <div>
     <style>
-        #test::before {
-            content: "foo"
+        .center::before {
+            content: "b"
+        }
+        .center::after {
+            content: "d"
         }
     </style>
-    <div id="test">bar</div>
+    <div id="test">a<span class="center">c</span>e</div>
 </div>
 
-<div class="accname-test" data-test="test" data-name="foobar" data-description=""></div>
+<div class="accname-test" data-test="test" data-name="abcde" data-description=""></div>
