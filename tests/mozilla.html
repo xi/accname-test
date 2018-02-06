@@ -338,7 +338,7 @@
 <div class="accname-test" data-test="btn_both_aria_labels" data-name="text I am a button, two" data-comment="aria-label and aria-labelledby, expect aria-labelledby"></div>
 <div class="accname-test" data-test="btn_labelledby_text" data-name="text" data-comment="Single relation. The value of &#x27;aria-labelledby&#x27; contains the ID of an element. Gets the name from text node of that element."></div>
 <div class="accname-test" data-test="btn_labelledby_texts" data-name="text1 text2" data-comment="Multiple relations. The value of &#x27;aria-labelledby&#x27; contains the IDs of elements. Gets the name from text nodes of those elements."></div>
-<div class="accname-test" data-test="input_labelledby_namedacc" data-name="Data" data-comment=""></div>
+<div class="accname-test" data-test="input_labelledby_namedacc" data-name="Data" data-comment="name from named accessible"></div>
 <div class="accname-test" data-test="btn_labelledby_mixed" data-name="nomore text" data-comment="Gets the name from text nodes contained by nested elements"></div>
 <div class="accname-test" data-test="btn_labelledby_mixed_hidden_child" data-name="nomore text2" data-comment="Gets the name from text nodes contained by nested elements, ignores hidden elements (bug 443081)."></div>
 <div class="accname-test" data-test="btn_labelledby_mixed_hidden" data-name="lala more hidden text" data-comment="Gets the name from hidden text nodes contained by nested elements, (label element is hidden entirely), (bug 443081)."></div>
@@ -363,31 +363,30 @@
 <div class="accname-test" data-test="lb_opt1_children_hidden" data-name="i am visible" data-comment="ARIA role option is presented allowing the name calculation from visible children (bug 443081)."></div>
 <div class="accname-test" data-test="tablemenuitem" data-name="menuitem 1" data-comment="Get the name from subtree of menuitem crossing role nothing to get the name from its children."></div>
 <div class="accname-test" data-test="label_with_acronym" data-name="O A T F World Wide Web" data-comment="Get the name from child acronym title attribute rather than from acronym content."></div>
-<div class="accname-test" data-test="testArticle" data-name="Test article" data-comment=""></div>
-<div class="accname-test" data-test="h1" data-name="heading" data-comment=""></div>
-<div class="accname-test" data-test="aria_heading" data-name="aria_heading" data-comment=""></div>
+<div class="accname-test" data-test="testArticle" data-name="Test article" data-comment="article"></div>
+<div class="accname-test" data-test="h1" data-name="heading" data-comment="heading"></div>
+<div class="accname-test" data-test="aria_heading" data-name="aria_heading" data-comment="ARIA heading"></div>
 <div class="accname-test" data-test="btn_title" data-name="title" data-comment="If nothing is left. Let&#x27;s try title attribute."></div>
 <div class="accname-test" data-test="textareawithchild" data-name="Story Foo is ended." data-comment="textarea&#x27;s name should have the value, which initially is specified by a text child."></div>
-<div class="accname-test" data-test="textareawithchild" data-name="Story Bar is ended." data-comment=""></div>
-<div class="accname-test" data-test="ctrlvalue_progressbar__input" data-name="foo 5 baz" data-comment=""></div>
-<div class="accname-test" data-test="ctrlvalue_scrollbar__input" data-name="foo 5 baz" data-comment=""></div>
-<div class="accname-test" data-test="ctrlvalue_slider__input" data-name="foo 5 baz" data-comment=""></div>
-<div class="accname-test" data-test="ctrlvalue_spinbutton__input" data-name="foo 5 baz" data-comment=""></div>
-<div class="accname-test" data-test="ctrlvalue_combobox__input" data-name="foo 5 baz" data-comment=""></div>
-<div class="accname-test" data-test="comboinstart" data-name="One day(s)." data-comment=""></div>
-<div class="accname-test" data-test="combo3" data-name="day(s)." data-comment=""></div>
-<div class="accname-test" data-test="textboxinstart" data-name="Two days." data-comment=""></div>
-<div class="accname-test" data-test="textbox1" data-name="days." data-comment=""></div>
-<div class="accname-test" data-test="comboinmiddle" data-name="Subscribe to ATOM feed." data-comment=""></div>
-<div class="accname-test" data-test="combo4" data-name="Subscribe to ATOM feed." data-comment=""></div>
-<div class="accname-test" data-test="comboinmiddle2" data-name="Play the Haliluya sound when new mail arrives" data-comment=""></div>
-<div class="accname-test" data-test="checkbox" data-name="Play the Haliluya sound when new mail arrives" data-comment=""></div>
-<div class="accname-test" data-test="comboinmiddle3" data-name="Play the Haliluya sound when new mail arrives" data-comment=""></div>
-<div class="accname-test" data-test="combo6" data-name="Play the Haliluya sound when new mail arrives" data-comment=""></div>
-<div class="accname-test" data-test="comboinend" data-name="This day was sunny" data-comment=""></div>
-<div class="accname-test" data-test="combo7" data-name="This day was" data-comment=""></div>
-<div class="accname-test" data-test="textboxinend" data-name="This day was sunny" data-comment=""></div>
-<div class="accname-test" data-test="textbox2" data-name="This day was" data-comment=""></div>
+<div class="accname-test" data-test="ctrlvalue_progressbar__input" data-name="foo 5 baz" data-comment="controls having a value used as part of computed name"></div>
+<div class="accname-test" data-test="ctrlvalue_scrollbar__input" data-name="foo 5 baz" data-comment="controls having a value used as part of computed name"></div>
+<div class="accname-test" data-test="ctrlvalue_slider__input" data-name="foo 5 baz" data-comment="controls having a value used as part of computed name"></div>
+<div class="accname-test" data-test="ctrlvalue_spinbutton__input" data-name="foo 5 baz" data-comment="controls having a value used as part of computed name"></div>
+<div class="accname-test" data-test="ctrlvalue_combobox__input" data-name="foo 5 baz" data-comment="controls having a value used as part of computed name"></div>
+<div class="accname-test" data-test="comboinstart" data-name="One day(s)." data-comment="a label with a nested control at the start (without and with whitespaces)"></div>
+<div class="accname-test" data-test="combo3" data-name="day(s)." data-comment="a label with a nested control at the start (without and with whitespaces)"></div>
+<div class="accname-test" data-test="textboxinstart" data-name="Two days." data-comment="a label with a nested control at the start (without and with whitespaces)"></div>
+<div class="accname-test" data-test="textbox1" data-name="days." data-comment="a label with a nested control at the start (without and with whitespaces)"></div>
+<div class="accname-test" data-test="comboinmiddle" data-name="Subscribe to ATOM feed." data-comment="a label with a nested control in the middle"></div>
+<div class="accname-test" data-test="combo4" data-name="Subscribe to ATOM feed." data-comment="a label with a nested control in the middle"></div>
+<div class="accname-test" data-test="comboinmiddle2" data-name="Play the Haliluya sound when new mail arrives" data-comment="a label with a nested control in the middle"></div>
+<div class="accname-test" data-test="checkbox" data-name="Play the Haliluya sound when new mail arrives" data-comment="a label with a nested control in the middle"></div>
+<div class="accname-test" data-test="comboinmiddle3" data-name="Play the Haliluya sound when new mail arrives" data-comment="a label with a nested control in the middle"></div>
+<div class="accname-test" data-test="combo6" data-name="Play the Haliluya sound when new mail arrives" data-comment="a label with a nested control in the middle"></div>
+<div class="accname-test" data-test="comboinend" data-name="This day was sunny" data-comment="a label with a nested control at the end (without and with whitespaces)"></div>
+<div class="accname-test" data-test="combo7" data-name="This day was" data-comment="a label with a nested control at the end (without and with whitespaces)"></div>
+<div class="accname-test" data-test="textboxinend" data-name="This day was sunny" data-comment="a label with a nested control at the end (without and with whitespaces)"></div>
+<div class="accname-test" data-test="textbox2" data-name="This day was" data-comment="a label with a nested control at the end (without and with whitespaces)"></div>
 <div class="accname-test" data-test="ph_password" data-name="a placeholder" data-comment="placeholder"></div>
 <div class="accname-test" data-test="ph_text" data-name="a placeholder" data-comment="placeholder"></div>
 <div class="accname-test" data-test="ph_textarea" data-name="a placeholder" data-comment="placeholder"></div>
