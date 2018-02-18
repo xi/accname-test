@@ -9,10 +9,20 @@
         #with-url::before {
             content: url('http://lorempixel.com/400/200/')
         }
+        #with-counter::before {
+            content: counter(does-not-exist)
+        }
+        #with-combination::before {
+            content: counter(does-not-exist) ". "
+        }
     </style>
     <div id="test">a<span class="center">c</span>e</div>
     <div id="with-url">content</div>
+    <div id="with-counter">content</div>
+    <div id="with-combination">content</div>
 </div>
 
 <div class="accname-test" data-test="test" data-name="abcde" data-description=""></div>
 <div class="accname-test" data-test="with-url" data-name="content" data-description="" data-comment="url() in pseudo element content should be ignored"></div>
+<div class="accname-test" data-test="with-counter" data-name="0content" data-description="" data-comment="counter() in pseudo content should be resolved"></div>
+<div class="accname-test" data-test="with-counter" data-name="0. content" data-description="" data-comment="several values in pseudo content should be concatenated"></div>
