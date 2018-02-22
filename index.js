@@ -13,6 +13,7 @@ var files = {
     'spec example2': fs.readFileSync(__dirname + '/tests/spec/example2.html', 'utf8'),
     'spec example3': fs.readFileSync(__dirname + '/tests/spec/example3.html', 'utf8'),
     'spec step2Fiii-ednote': fs.readFileSync(__dirname + '/tests/spec/step2Fiii-ednote.html', 'utf8'),
+    'w3c wiki': fs.readFileSync(__dirname + '/tests/w3c.html', 'utf8'),
 };
 
 var getTests = function(root) {
