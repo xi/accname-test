@@ -8,14 +8,30 @@
             comment: heading.textContent,
             index: i,
         };
-        var pre = heading.nextSibling.nextSibling;
+        var pre = heading;
+        while (pre && pre.nodeName.toLowerCase() !== 'pre') {
+            pre = pre.nextSibling;
+        }
+        if (!pre) {
+            return {};
+        }
         var lines = pre.textContent.trim().split('\n');
+
+        var fixIdrefs = function(s) {
+            return s.split(/\s+/).map(function(idref) {
+                return idref + '__' + i
+            }).join(' ');
+        };
 
         ret.html = lines.slice(1, -1).join('\n')
             .replace(/(id="[^"]*)"/g, '$1__' + i + '"')
             .replace(/(for="[^"]*)"/g, '$1__' + i + '"')
-            .replace(/(labelledby="[^"]*)"/g, '$1__' + i + '"')
-            .replace(/(describedby="[^"]*)"/g, '$1__' + i + '"')
+            .replace(/labelledby="([^"]*)"/g, function(match, contents) {
+                return 'labelledby="' + fixIdrefs(contents) + '"'
+            })
+            .replace(/describedby="([^"]*)"/g, function(match, contents) {
+                return 'describedby="' + fixIdrefs(contents) + '"'
+            })
             .replace(/([^ ]*:(before|after) {)/g, '#wrapper__' + i + ' $1');
 
         var last = lines[lines.length - 1];
