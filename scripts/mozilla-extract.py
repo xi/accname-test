@@ -2,7 +2,7 @@ import sys
 import re
 import html
 
-# https://hg.mozilla.org/mozilla-central/raw-file/5d6d869ec7becc99b8c3dc639fc52e49b1af3ef1/accessible/tests/mochitest/name/test_general.html
+# https://dxr.mozilla.org/mozilla-central/source/accessible/tests/mochitest/name/test_general.html
 with open(sys.argv[1]) as fh:
     comments = []
     for line in fh:
