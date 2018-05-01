@@ -32,6 +32,9 @@
             .replace(/describedby="([^"]*)"/g, function(match, contents) {
                 return 'describedby="' + fixIdrefs(contents) + '"'
             })
+            .replace(/owns="([^"]*)"/g, function(match, contents) {
+                return 'owns="' + fixIdrefs(contents) + '"'
+            })
             .replace(/([^ ]*:(before|after) {)/g, '#wrapper__' + i + ' $1');
 
         var last = lines[lines.length - 1];
