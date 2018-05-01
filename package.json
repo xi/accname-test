@@ -28,5 +28,8 @@
   "bugs": {
     "url": "https://github.com/xi/accname-test/issues"
   },
-  "homepage": "https://github.com/xi/accname-test#readme"
+  "homepage": "https://github.com/xi/accname-test#readme",
+  "devDependencies": {
+    "brfs": "^1.4.4"
+  }
 }
