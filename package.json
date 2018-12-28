@@ -30,6 +30,6 @@
   },
   "homepage": "https://github.com/xi/accname-test#readme",
   "devDependencies": {
-    "brfs": "^1.4.4"
+    "brfs": "^1.6.1"
   }
 }
